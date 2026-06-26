@@ -1,4 +1,4 @@
-﻿/* ============================================
+/* ============================================
    EL BUEN CEBAR — App Initialization
    Main entry point
    ============================================ */
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  console.log('%c🧉 EL BUEN CEBAR', 'font-size: 24px; font-weight: bold; color: #B8954F;');
-  console.log('%cTienda de Mates Premium', 'font-size: 12px; color: #6B6B6B;');
+  console.log('%c🧉 EL BUEN CEBAR', 'font-size: 24px; font-weight: bold; color: #9C6634;');
+  console.log('%cTienda de Mates Premium', 'font-size: 12px; color: #5E646A;');
 });
 
