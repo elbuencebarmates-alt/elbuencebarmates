@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto | El Buen Cebar — Mates Premium Argentinos</title>
+  <meta name="description" content="Mate premium artesanal argentino. Hecho a mano con los mejores materiales. Envío a todo el país.">
+  <meta name="keywords" content="mate premium, mate argentino, mate artesanal, cebate uno">
+  <meta property="og:title" content="Producto | El Buen Cebar">
+  <meta property="og:description" content="Mate premium artesanal argentino. Hecho a mano con materiales nobles.">
+  <meta property="og:type" content="product">
+  <meta property="og:url" content="https://elbuencebar.com/producto.html">
+  <link rel="canonical" href="https://elbuencebar.com/producto.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/product.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav nav--scrolled">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">El Buen <span>Cebar</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Inicio</a></li>
+        <li><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+        <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav__link">Contacto</a></li>
+      </ul>
+      <div class="nav__actions">
+        <button class="nav__action-btn" data-search-toggle>
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="nav__action-btn" data-cart-toggle>
+          <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="nav__cart-count" style="display:none">0</span>
+        </button>
+      </div>
+      <button class="nav__hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__mobile-menu">
+    <a href="index.html" class="nav__link">Inicio</a>
+    <a href="catalogo.html" class="nav__link">Catálogo</a>
+    <a href="nosotros.html" class="nav__link">Nosotros</a>
+    <a href="contacto.html" class="nav__link">Contacto</a>
+  </div>
+
+  <main>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+      <div class="container">
+        <nav class="breadcrumb__nav" aria-label="Breadcrumb">
+          <a href="index.html" class="breadcrumb__link">Inicio</a>
+          <span class="breadcrumb__separator">/</span>
+          <a href="catalogo.html" class="breadcrumb__link">Catálogo</a>
+          <span class="breadcrumb__separator">/</span>
+          <span class="breadcrumb__current product-info__title-breadcrumb">Producto</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Product Detail -->
+    <section class="product-detail">
+      <div class="container">
+        <div class="product-detail__grid">
+
+          <!-- Gallery -->
+          <div class="product-gallery">
+            <div class="product-gallery__main">
+              <img src="" alt="Producto" onerror="this.style.display='none'">
+              <div class="product-gallery__placeholder" style="display:none;width:100%;aspect-ratio:1;background:linear-gradient(135deg,#5C3D2E 0%,#B8954F 100%);border-radius:var(--radius-lg)"></div>
+            </div>
+            <div class="product-gallery__thumbs">
+              <button class="product-gallery__thumb active">
+                <img src="" alt="Vista 1" onerror="this.parentElement.style.display='none'">
+              </button>
+              <button class="product-gallery__thumb">
+                <img src="" alt="Vista 2" onerror="this.parentElement.style.display='none'">
+              </button>
+              <button class="product-gallery__thumb">
+                <img src="" alt="Vista 3" onerror="this.parentElement.style.display='none'">
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info">
+            <span class="product-info__category">Categoría</span>
+            <h1 class="product-info__title">Nombre del Producto</h1>
+            <p class="product-info__subtitle">Subtítulo del producto</p>
+
+            <div class="product-info__rating">
+              <!-- Rendered by JS -->
+            </div>
+
+            <div class="product-info__price">
+              <!-- Rendered by JS -->
+            </div>
+
+            <p class="product-info__description">
+              Descripción del producto cargada dinámicamente.
+            </p>
+
+            <div class="product-info__materials">
+              <!-- Material tags rendered by JS -->
+            </div>
+
+            <div class="product-info__actions">
+              <div class="product-info__quantity">
+                <button class="product-info__qty-btn" data-qty-decrease onclick="const input=this.nextElementSibling;input.value=Math.max(1,parseInt(input.value)-1)">−</button>
+                <input type="number" class="product-info__qty-input" value="1" min="1" max="10" aria-label="Cantidad">
+                <button class="product-info__qty-btn" data-qty-increase onclick="const input=this.previousElementSibling;input.value=Math.min(10,parseInt(input.value)+1)">+</button>
+              </div>
+              <button class="btn btn--primary btn--lg" data-add-to-cart>
+                <svg viewBox="0 0 24 24" width="20" height="20" style="margin-right:8px;vertical-align:middle"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 6h18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 10a4 4 0 0 1-8 0" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                Comprar Ahora
+              </button>
+            </div>
+
+            <div class="product-info__features">
+              <!-- Features rendered by JS -->
+            </div>
+
+            <div class="product-info__guarantees">
+              <div class="product-info__guarantee">
+                <div class="product-info__guarantee-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2"/><path d="m12 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="product-info__guarantee-text">
+                  <strong>Envío gratis</strong>
+                  <span>A todo el país</span>
+                </div>
+              </div>
+              <div class="product-info__guarantee">
+                <div class="product-info__guarantee-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="product-info__guarantee-text">
+                  <strong>Hecho a mano</strong>
+                  <span>Artesanal argentino</span>
+                </div>
+              </div>
+              <div class="product-info__guarantee">
+                <div class="product-info__guarantee-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="product-info__guarantee-text">
+                  <strong>Garantía</strong>
+                  <span>30 días</span>
+                </div>
+              </div>
+              <div class="product-info__guarantee">
+                <div class="product-info__guarantee-icon">
+                  <svg viewBox="0 0 24 24" width="24" height="24"><rect x="1" y="4" width="22" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M1 10h22" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="product-info__guarantee-text">
+                  <strong>Pago seguro</strong>
+                  <span>Todas las tarjetas</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Tabs -->
+    <section class="product-tabs">
+      <div class="container">
+        <div class="product-tabs__nav">
+          <button class="product-tabs__tab active" data-tab="descripcion">Descripción</button>
+          <button class="product-tabs__tab" data-tab="cuidados">Cuidados del Mate</button>
+          <button class="product-tabs__tab" data-tab="opiniones">Opiniones</button>
+        </div>
+        <div class="product-tabs__content">
+          <div class="product-tabs__panel active" data-tab-content="descripcion">
+            <div class="product-tabs__description">
+              <h3>Detalles del Producto</h3>
+              <p class="product-tabs__desc-text">Este mate fue creado con dedicación artesanal, utilizando materiales de la más alta calidad. Cada pieza es única y refleja la tradición argentina del mate.</p>
+              <div class="product-tabs__specs">
+                <div class="product-tabs__spec">
+                  <span class="product-tabs__spec-label">Material</span>
+                  <span class="product-tabs__spec-value product-tabs__material">—</span>
+                </div>
+                <div class="product-tabs__spec">
+                  <span class="product-tabs__spec-label">Capacidad</span>
+                  <span class="product-tabs__spec-value">250 ml</span>
+                </div>
+                <div class="product-tabs__spec">
+                  <span class="product-tabs__spec-label">Origen</span>
+                  <span class="product-tabs__spec-value">Argentina</span>
+                </div>
+                <div class="product-tabs__spec">
+                  <span class="product-tabs__spec-label">Incluye</span>
+                  <span class="product-tabs__spec-value">Mate + packaging premium</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="product-tabs__panel" data-tab-content="cuidados">
+            <div class="product-tabs__care">
+              <h3>Cómo Curar y Cuidar tu Mate</h3>
+              <p>Seguí estos pasos para que tu mate dure toda la vida y cada cebada sea mejor que la anterior.</p>
+              <ol class="product-tabs__care-steps">
+                <li><strong>Curado inicial:</strong> Llená el mate con yerba húmeda y dejalo reposar 24 horas. Repetí el proceso 2-3 veces.</li>
+                <li><strong>Primer uso:</strong> Enjuagá con agua tibia y ya está listo para cebar.</li>
+                <li><strong>Después de cada uso:</strong> Vaciá la yerba, enjuagá con agua tibia y dejá secar boca abajo.</li>
+                <li><strong>Evitá:</strong> No uses detergente ni jabón. No lo dejes con yerba adentro por mucho tiempo.</li>
+                <li><strong>Almacenamiento:</strong> Guardalo en un lugar seco y ventilado.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="product-tabs__panel" data-tab-content="opiniones">
+            <div class="product-tabs__reviews">
+              <div class="product-tabs__reviews-summary">
+                <div class="product-tabs__reviews-score">
+                  <span class="product-tabs__reviews-number">4.8</span>
+                  <div class="product-tabs__reviews-stars">★★★★★</div>
+                  <span class="product-tabs__reviews-total">Basado en opiniones de clientes</span>
+                </div>
+              </div>
+              <div class="product-tabs__reviews-list">
+                <div class="product-tabs__review">
+                  <div class="product-tabs__review-header">
+                    <strong>Martín G.</strong>
+                    <span class="product-tabs__review-stars">★★★★★</span>
+                  </div>
+                  <p>Excelente calidad, superó mis expectativas. El terminado es impecable y el mate ceba de diez. Muy recomendable.</p>
+                </div>
+                <div class="product-tabs__review">
+                  <div class="product-tabs__review-header">
+                    <strong>Lucía M.</strong>
+                    <span class="product-tabs__review-stars">★★★★★</span>
+                  </div>
+                  <p>Hermoso mate, lo compré de regalo y quedaron encantados. El packaging también es muy cuidado. 10/10.</p>
+                </div>
+                <div class="product-tabs__review">
+                  <div class="product-tabs__review-header">
+                    <strong>Santiago R.</strong>
+                    <span class="product-tabs__review-stars">★★★★☆</span>
+                  </div>
+                  <p>Muy buen producto, se nota la calidad artesanal. Tardó un poco más de lo esperado en llegar pero valió la pena.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products reveal">
+      <div class="container">
+        <h2 class="related-products__title">También te puede gustar</h2>
+        <div class="related-products__grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a href="index.html" class="nav__logo" style="font-size:1.5rem">El Buen <span>Cebar</span></a>
+          <p class="footer__brand-description">Mates premium argentinos. Tradición artesanal con diseño moderno para quienes disfrutan el ritual del mate con estilo.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/elbuen.cebar" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Tienda</h4>
+          <a href="catalogo.html" class="footer__link">Catálogo</a>
+          <a href="catalogo.html?cat=algarrobo" class="footer__link">Imperiales de Algarrobo</a>
+          <a href="catalogo.html?cat=pampa" class="footer__link">Mates Pampa</a>
+          <a href="catalogo.html?cat=cuero" class="footer__link">Imperiales de Cuero</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Info</h4>
+          <a href="nosotros.html" class="footer__link">Sobre Nosotros</a>
+          <a href="contacto.html" class="footer__link">Contacto</a>
+          <a href="#" class="footer__link">Envíos</a>
+          <a href="#" class="footer__link">Cambios y Devoluciones</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contacto</h4>
+          <a href="mailto:hola@elbuencebar.com" class="footer__link">hola@elbuencebar.com</a>
+          <a href="https://wa.me/5491100000000" class="footer__link">WhatsApp</a>
+          <a href="https://instagram.com/elbuen.cebar" class="footer__link">@elbuen.cebar</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 El Buen Cebar. Todos los derechos reservados.</p>
+        <div class="footer__payment-icons">
+          <span class="footer__payment-icon">VISA</span>
+          <span class="footer__payment-icon">MC</span>
+          <span class="footer__payment-icon">AMEX</span>
+          <span class="footer__payment-icon">MP</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div class="search-modal">
+    <button class="search-modal__close">✕</button>
+    <input type="text" class="search-modal__input" placeholder="Buscar productos...">
+    <div class="search-modal__results"></div>
+  </div>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3 class="cart-sidebar__title">Tu Carrito</h3>
+      <button class="cart-sidebar__close" onclick="Cart.toggleSidebar()">✕</button>
+    </div>
+    <div class="cart-sidebar__items"></div>
+    <div class="cart-sidebar__footer">
+      <div class="cart-sidebar__total">
+        <span>Total</span>
+        <span class="cart-sidebar__total-price">$ 0</span>
+      </div>
+      <a href="carrito.html" class="btn btn--primary btn--full">Ver Carrito</a>
+      <a href="checkout.html" class="btn btn--outline btn--full" style="margin-top:var(--space-sm)">Finalizar Compra</a>
+    </div>
+  </div>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5491100000000?text=Hola! Me interesa un mate premium" target="_blank" class="whatsapp-float visible" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- JS -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.product-tabs__tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.product-tabs__tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.product-tabs__panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        document.querySelector(`[data-tab-content="${tab.dataset.tab}"]`).classList.add('active');
+      });
+    });
+
+    // Product data population
+    document.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const productId = params.get('id');
+      const product = productId ? getProductById(productId) : PRODUCTS[0];
+      if (!product) { window.location.href = 'catalogo.html'; return; }
+
+      // Update page title
+      document.title = `${product.name} ${product.subtitle} | El Buen Cebar`;
+
+      // Update breadcrumb
+      const breadcrumbCurrent = document.querySelector('.product-info__title-breadcrumb');
+      if (breadcrumbCurrent) breadcrumbCurrent.textContent = product.name;
+
+      // Populate all product info
+      document.querySelector('.product-info__category').textContent = product.category;
+      document.querySelector('.product-info__title').textContent = product.name;
+      document.querySelector('.product-info__subtitle').textContent = product.subtitle;
+      document.querySelector('.product-info__description').textContent = product.description;
+
+      // Price
+      const priceHTML = `<span class="price__current">${formatPrice(product.price)}</span>` +
+        (product.originalPrice ? `<span class="price__original">${formatPrice(product.originalPrice)}</span>` +
+        `<span class="price__discount">-${getDiscountPercentage(product.originalPrice, product.price)}%</span>` : '');
+      document.querySelector('.product-info__price').innerHTML = priceHTML;
+
+      // Main image
+      const mainImg = document.querySelector('.product-gallery__main img');
+      mainImg.src = product.image;
+      mainImg.alt = product.name;
+      mainImg.onerror = function() {
+        this.style.display = 'none';
+        this.nextElementSibling.style.display = 'block';
+      };
+
+      // Thumbnails
+      const thumbs = document.querySelectorAll('.product-gallery__thumb img');
+      thumbs.forEach((thumb, i) => {
+        thumb.src = product.image;
+        thumb.alt = `${product.name} - Vista ${i + 1}`;
+      });
+
+      // Materials
+      const materialsContainer = document.querySelector('.product-info__materials');
+      materialsContainer.innerHTML = product.materials.map(m => `<span class="product-info__material-tag">${m}</span>`).join('');
+
+      // Features
+      const featuresContainer = document.querySelector('.product-info__features');
+      featuresContainer.innerHTML = product.features.map(f => `<div class="product-info__feature"><span class="product-info__feature-icon">✓</span><span>${f}</span></div>`).join('');
+
+      // Care tab
+      const careTab = document.querySelector('[data-tab-content="cuidados"] p');
+      if (careTab && product.care) careTab.textContent = product.care;
+
+      // Description tab text
+      const descText = document.querySelector('.product-tabs__desc-text');
+      if (descText) descText.textContent = product.description;
+
+      // Material in specs
+      const materialSpec = document.querySelector('.product-tabs__material');
+      if (materialSpec && product.materials) materialSpec.textContent = product.materials.join(', ');
+
+      // Add to cart button
+      document.querySelector('[data-add-to-cart]').onclick = () => {
+        const qty = parseInt(document.querySelector('.product-info__qty-input').value) || 1;
+        for (let i = 0; i < qty; i++) Cart.addItem(product.id, false); // false to avoid sidebar opening if it does that
+        window.location.href = 'checkout.html';
+      };
+
+      // Rating
+      const ratingHTML = Array(5).fill(0).map((_, i) => `<span class="rating__star${i < Math.floor(product.rating) ? '' : '--empty'}">★</span>`).join('') + `<span class="rating__count">${product.rating} (${product.reviews} opiniones)</span>`;
+      document.querySelector('.product-info__rating').innerHTML = ratingHTML;
+
+      // Reviews summary
+      const reviewsNumber = document.querySelector('.product-tabs__reviews-number');
+      if (reviewsNumber) reviewsNumber.textContent = product.rating;
+
+      // Related products
+      const related = PRODUCTS.filter(p => p.categorySlug === product.categorySlug && p.id !== product.id).slice(0, 4);
+      const relatedGrid = document.querySelector('.related-products__grid');
+      if (relatedGrid) relatedGrid.innerHTML = related.map(p => createProductCard(p)).join('');
+    });
+  </script>
+
+</body>
+</html>
+
+

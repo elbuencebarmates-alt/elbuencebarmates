@@ -1,0 +1,546 @@
+﻿<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — El Buen Cebar | Mates Premium Argentinos</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Completá tu compra en El Buen Cebar. Checkout seguro para mates premium argentinos artesanales.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Checkout — El Buen Cebar">
+  <meta property="og:description" content="Mates premium argentinos. Tradición artesanal con diseño moderno.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://elbuencebar.com/checkout">
+  <meta property="og:image" content="https://elbuencebar.com/assets/images/og-image.jpg">
+  <link rel="canonical" href="https://elbuencebar.com/checkout">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/checkout.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVIGATION (Minimal checkout nav)
+       ═══════════════════════════════════════════ -->
+  <nav class="nav nav--scrolled">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">El Buen <span>Cebar</span></a>
+      <ul class="nav__links">
+        <li><a href="index.html" class="nav__link">Inicio</a></li>
+        <li><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+        <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+        <li><a href="contacto.html" class="nav__link">Contacto</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="carrito.html" class="btn btn--ghost btn--sm" style="text-transform:none; letter-spacing:0; font-size:var(--text-sm);">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="1.5"><path d="m15 18-6-6 6-6"/></svg>
+          Volver al carrito
+        </a>
+        <button class="nav__action-btn" data-search-toggle>
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="nav__action-btn" data-cart-toggle>
+          <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="nav__cart-count" style="display:none">0</span>
+        </button>
+      </div>
+      <button class="nav__hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="nav__mobile-menu">
+    <a href="index.html" class="nav__link">Inicio</a>
+    <a href="catalogo.html" class="nav__link">Catálogo</a>
+    <a href="nosotros.html" class="nav__link">Nosotros</a>
+    <a href="contacto.html" class="nav__link">Contacto</a>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       CHECKOUT PAGE
+       ═══════════════════════════════════════════ -->
+  <main class="checkout-page">
+    <div class="container">
+
+      <!-- Page Title -->
+      <h1 class="checkout-page__title reveal">Checkout</h1>
+
+      <!-- Progress Bar: 3 Steps -->
+      <div class="progress-bar reveal">
+        <div class="progress-bar__step active">
+          <span class="progress-bar__number">1</span>
+          <span>Datos</span>
+        </div>
+        <div class="progress-bar__line"></div>
+        <div class="progress-bar__step">
+          <span class="progress-bar__number">2</span>
+          <span>Envío</span>
+        </div>
+        <div class="progress-bar__line"></div>
+        <div class="progress-bar__step">
+          <span class="progress-bar__number">3</span>
+          <span>Pago</span>
+        </div>
+      </div>
+
+      <!-- Checkout Layout: 2 Columns -->
+      <div class="checkout-layout">
+
+        <!-- Column 1: Checkout Steps -->
+        <div class="checkout-steps">
+
+          <!-- ═══ STEP 1: Contact & Address Info ═══ -->
+          <div class="checkout-step active" data-step="1">
+            <h2 class="checkout-step__title">Datos de Contacto y Envío</h2>
+
+            <div class="checkout-step__row">
+              <div class="form-group">
+                <label class="form-label" for="checkout-nombre">Nombre *</label>
+                <input type="text" id="checkout-nombre" class="form-input" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkout-apellido">Apellido *</label>
+                <input type="text" id="checkout-apellido" class="form-input" placeholder="Tu apellido" required>
+              </div>
+            </div>
+
+            <div class="checkout-step__row">
+              <div class="form-group">
+                <label class="form-label" for="checkout-email">Email *</label>
+                <input type="email" id="checkout-email" class="form-input" placeholder="tu@email.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkout-telefono">Teléfono *</label>
+                <input type="tel" id="checkout-telefono" class="form-input" placeholder="11 1234-5678" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="checkout-direccion">Dirección *</label>
+              <input type="text" id="checkout-direccion" class="form-input" placeholder="Calle, número, piso, depto." required>
+            </div>
+
+            <div class="checkout-step__row">
+              <div class="form-group">
+                <label class="form-label" for="checkout-ciudad">Ciudad *</label>
+                <input type="text" id="checkout-ciudad" class="form-input" placeholder="Ciudad" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkout-provincia">Provincia *</label>
+                <select id="checkout-provincia" class="form-select" required>
+                  <option value="" disabled selected>Seleccioná tu provincia</option>
+                  <option value="buenos-aires">Buenos Aires</option>
+                  <option value="caba">Ciudad Autónoma de Buenos Aires</option>
+                  <option value="catamarca">Catamarca</option>
+                  <option value="chaco">Chaco</option>
+                  <option value="chubut">Chubut</option>
+                  <option value="cordoba">Córdoba</option>
+                  <option value="corrientes">Corrientes</option>
+                  <option value="entre-rios">Entre Ríos</option>
+                  <option value="formosa">Formosa</option>
+                  <option value="jujuy">Jujuy</option>
+                  <option value="la-pampa">La Pampa</option>
+                  <option value="la-rioja">La Rioja</option>
+                  <option value="mendoza">Mendoza</option>
+                  <option value="misiones">Misiones</option>
+                  <option value="neuquen">Neuquén</option>
+                  <option value="rio-negro">Río Negro</option>
+                  <option value="salta">Salta</option>
+                  <option value="san-juan">San Juan</option>
+                  <option value="san-luis">San Luis</option>
+                  <option value="santa-cruz">Santa Cruz</option>
+                  <option value="santa-fe">Santa Fe</option>
+                  <option value="santiago-del-estero">Santiago del Estero</option>
+                  <option value="tierra-del-fuego">Tierra del Fuego</option>
+                  <option value="tucuman">Tucumán</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="max-width:200px;">
+              <label class="form-label" for="checkout-cp">Código Postal *</label>
+              <input type="text" id="checkout-cp" class="form-input" placeholder="1234" required>
+            </div>
+
+            <!-- Step Navigation -->
+            <div class="checkout-nav">
+              <a href="carrito.html" class="btn btn--ghost">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="1.5"><path d="m15 18-6-6 6-6"/></svg>
+                Volver al Carrito
+              </a>
+              <button class="btn btn--primary" data-next>
+                Continuar a Envío
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+
+          <!-- ═══ STEP 2: Shipping Options ═══ -->
+          <div class="checkout-step" data-step="2">
+            <h2 class="checkout-step__title">Método de Envío</h2>
+
+            <label class="shipping-option selected">
+              <input type="radio" name="shipping" value="standard" checked>
+              <div class="shipping-option__info">
+                <p class="shipping-option__name">Envío Estándar</p>
+                <p class="shipping-option__time">Entrega en 3 a 5 días hábiles</p>
+              </div>
+              <span class="shipping-option__price">$2.500</span>
+            </label>
+
+            <label class="shipping-option">
+              <input type="radio" name="shipping" value="express">
+              <div class="shipping-option__info">
+                <p class="shipping-option__name">Envío Express</p>
+                <p class="shipping-option__time">Entrega en 1 a 2 días hábiles</p>
+              </div>
+              <span class="shipping-option__price">$4.500</span>
+            </label>
+
+            <label class="shipping-option">
+              <input type="radio" name="shipping" value="pickup">
+              <div class="shipping-option__info">
+                <p class="shipping-option__name">Retiro en Punto de Entrega</p>
+                <p class="shipping-option__time">Disponible en 24-48 hs</p>
+              </div>
+              <span class="shipping-option__price" style="color:var(--color-success); font-weight:var(--weight-bold)">GRATIS</span>
+            </label>
+
+            <!-- Step Navigation -->
+            <div class="checkout-nav">
+              <button class="btn btn--ghost" data-prev>
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="1.5"><path d="m15 18-6-6 6-6"/></svg>
+                Anterior
+              </button>
+              <button class="btn btn--primary" data-next>
+                Continuar a Pago
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+
+
+          <!-- ═══ STEP 3: Payment Method ═══ -->
+          <div class="checkout-step" data-step="3">
+            <h2 class="checkout-step__title">Método de Pago</h2>
+
+            <div class="payment-methods">
+
+              <label class="payment-method selected">
+                <input type="radio" name="payment" value="mercadopago" checked>
+                <span class="payment-method__icon">💙</span>
+                <div>
+                  <p class="payment-method__name">Mercado Pago</p>
+                  <p class="payment-method__description">Tarjeta, débito, efectivo o cuotas sin interés</p>
+                </div>
+              </label>
+
+              <label class="payment-method">
+                <input type="radio" name="payment" value="card">
+                <span class="payment-method__icon">💳</span>
+                <div>
+                  <p class="payment-method__name">Tarjeta de Crédito / Débito</p>
+                  <p class="payment-method__description">Visa, Mastercard, American Express</p>
+                </div>
+              </label>
+
+              <label class="payment-method">
+                <input type="radio" name="payment" value="transfer">
+                <span class="payment-method__icon">🏦</span>
+                <div>
+                  <p class="payment-method__name">Transferencia Bancaria</p>
+                  <p class="payment-method__description">CBU / Alias — 10% de descuento</p>
+                </div>
+              </label>
+
+            </div>
+
+            <!-- Secure Note -->
+            <div style="display:flex; align-items:center; gap:var(--space-xs); margin-top:var(--space-xl); font-size:var(--text-xs); color:var(--color-text-muted);">
+              <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="1.5">
+                <rect x="3" y="11" width="18" height="11" rx="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <span>Tus datos están protegidos con encriptación SSL de 256 bits</span>
+            </div>
+
+            <!-- Step Navigation -->
+            <div class="checkout-nav">
+              <button class="btn btn--ghost" data-prev>
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="1.5"><path d="m15 18-6-6 6-6"/></svg>
+                Anterior
+              </button>
+              <button class="btn btn--primary btn--lg btn--shine" data-confirm>
+                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" fill="none" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+                Confirmar Pedido
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /.checkout-steps -->
+
+
+        <!-- Column 2: Order Summary Sidebar -->
+        <aside class="checkout-summary">
+          <h3 class="checkout-summary__title">Resumen del Pedido</h3>
+
+          <!-- Items (populated by JS) -->
+          <div class="checkout-summary__items">
+            <!-- Rendered dynamically on DOMContentLoaded -->
+          </div>
+
+          <div class="checkout-summary__divider"></div>
+
+          <!-- Subtotal -->
+          <div class="cart-summary__row">
+            <span>Subtotal</span>
+            <span class="checkout-summary__subtotal-price">$ 0</span>
+          </div>
+
+          <!-- Shipping -->
+          <div class="cart-summary__row">
+            <span>Envío</span>
+            <span class="checkout-summary__shipping-price" style="color:var(--color-text-muted)">Calculado en paso 2</span>
+          </div>
+
+          <!-- Total -->
+          <div class="cart-summary__row cart-summary__row--total">
+            <span>Total</span>
+            <span class="checkout-summary__total-price">$ 0</span>
+          </div>
+
+          <!-- Trust Badges -->
+          <div style="margin-top:var(--space-xl); padding-top:var(--space-lg); border-top:1px solid var(--color-border);">
+            <div style="display:flex; flex-direction:column; gap:var(--space-sm);">
+              <div style="display:flex; align-items:center; gap:var(--space-xs); font-size:var(--text-xs); color:var(--color-text-muted);">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--color-success)" fill="none" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+                Compra 100% protegida
+              </div>
+              <div style="display:flex; align-items:center; gap:var(--space-xs); font-size:var(--text-xs); color:var(--color-text-muted);">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--color-success)" fill="none" stroke-width="1.5"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><path d="M15 18H9"/><circle cx="17" cy="18" r="2"/></svg>
+                Envío gratis en compras +$20.000
+              </div>
+              <div style="display:flex; align-items:center; gap:var(--space-xs); font-size:var(--text-xs); color:var(--color-text-muted);">
+                <svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--color-success)" fill="none" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l2 2"/></svg>
+                30 días de devolución
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div><!-- /.checkout-layout -->
+
+    </div><!-- /.container -->
+  </main>
+
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <a href="index.html" class="nav__logo" style="font-size:1.5rem">El Buen <span>Cebar</span></a>
+          <p class="footer__brand-description">Mates premium argentinos. Tradición artesanal con diseño moderno para quienes disfrutan el ritual del mate con estilo.</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/elbuen.cebar" target="_blank" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Tienda</h4>
+          <a href="catalogo.html" class="footer__link">Catálogo</a>
+          <a href="catalogo.html?cat=algarrobo" class="footer__link">Imperiales de Algarrobo</a>
+          <a href="catalogo.html?cat=pampa" class="footer__link">Mates Pampa</a>
+          <a href="catalogo.html?cat=cuero" class="footer__link">Imperiales de Cuero</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Info</h4>
+          <a href="nosotros.html" class="footer__link">Sobre Nosotros</a>
+          <a href="contacto.html" class="footer__link">Contacto</a>
+          <a href="#" class="footer__link">Envíos</a>
+          <a href="#" class="footer__link">Cambios y Devoluciones</a>
+        </div>
+        <div class="footer__col">
+          <h4 class="footer__col-title">Contacto</h4>
+          <a href="mailto:hola@elbuencebar.com" class="footer__link">hola@elbuencebar.com</a>
+          <a href="https://wa.me/5491100000000" class="footer__link">WhatsApp</a>
+          <a href="https://instagram.com/elbuen.cebar" class="footer__link">@elbuen.cebar</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 El Buen Cebar. Todos los derechos reservados.</p>
+        <div class="footer__payment-icons">
+          <span class="footer__payment-icon">VISA</span>
+          <span class="footer__payment-icon">MC</span>
+          <span class="footer__payment-icon">AMEX</span>
+          <span class="footer__payment-icon">MP</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════
+       SEARCH MODAL
+       ═══════════════════════════════════════════ -->
+  <div class="search-modal">
+    <button class="search-modal__close">✕</button>
+    <input type="text" class="search-modal__input" placeholder="Buscar productos...">
+    <div class="search-modal__results"></div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       CART SIDEBAR
+       ═══════════════════════════════════════════ -->
+  <div class="cart-overlay"></div>
+  <div class="cart-sidebar">
+    <div class="cart-sidebar__header">
+      <h3 class="cart-sidebar__title">Tu Carrito</h3>
+      <button class="cart-sidebar__close" onclick="Cart.toggleSidebar()">✕</button>
+    </div>
+    <div class="cart-sidebar__items"></div>
+    <div class="cart-sidebar__footer">
+      <div class="cart-sidebar__total">
+        <span>Total</span>
+        <span class="cart-sidebar__total-price">$ 0</span>
+      </div>
+      <a href="carrito.html" class="btn btn--primary btn--full">Ver Carrito</a>
+      <a href="checkout.html" class="btn btn--outline btn--full" style="margin-top:var(--space-sm)">Finalizar Compra</a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════
+       WHATSAPP FLOAT
+       ═══════════════════════════════════════════ -->
+  <a href="https://wa.me/5491100000000?text=Hola! Me interesa un mate premium" target="_blank" class="whatsapp-float visible" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+
+  <!-- ═══════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════ -->
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // ── Multi-step checkout navigation ──
+      let currentStep = 1;
+      const steps = document.querySelectorAll('.checkout-step');
+      const progressSteps = document.querySelectorAll('.progress-bar__step');
+      const progressLines = document.querySelectorAll('.progress-bar__line');
+
+      function showStep(n) {
+        steps.forEach(s => s.classList.remove('active'));
+        document.querySelector(`[data-step="${n}"]`).classList.add('active');
+        progressSteps.forEach((s, i) => {
+          s.classList.remove('active', 'completed');
+          if (i + 1 < n) s.classList.add('completed');
+          if (i + 1 === n) s.classList.add('active');
+        });
+        progressLines.forEach((l, i) => {
+          l.classList.toggle('completed', i + 1 < n);
+        });
+        currentStep = n;
+        // Scroll to top of form
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('[data-next]').forEach(btn => btn.addEventListener('click', () => showStep(currentStep + 1)));
+      document.querySelectorAll('[data-prev]').forEach(btn => btn.addEventListener('click', () => showStep(currentStep - 1)));
+      document.querySelector('[data-confirm]')?.addEventListener('click', () => {
+        document.querySelector('.checkout-steps').innerHTML = `
+          <div class="checkout-success">
+            <div class="checkout-success__icon">🧉</div>
+            <h2 class="checkout-success__title">¡Pedido Confirmado!</h2>
+            <p class="checkout-success__text">Gracias por tu compra. Te enviamos un email con los detalles de tu pedido.<br>Tu número de orden es: <strong>#CU-${Date.now().toString(36).toUpperCase()}</strong></p>
+            <a href="index.html" class="btn btn--primary btn--lg">Volver al Inicio</a>
+          </div>`;
+        document.querySelector('.progress-bar').style.display = 'none';
+        Cart.clear();
+      });
+
+      // ── Shipping option selection styling ──
+      document.querySelectorAll('.shipping-option').forEach(option => {
+        option.addEventListener('click', () => {
+          document.querySelectorAll('.shipping-option').forEach(o => o.classList.remove('selected'));
+          option.classList.add('selected');
+          option.querySelector('input[type="radio"]').checked = true;
+        });
+      });
+
+      // ── Payment method selection styling ──
+      document.querySelectorAll('.payment-method').forEach(method => {
+        method.addEventListener('click', () => {
+          document.querySelectorAll('.payment-method').forEach(m => m.classList.remove('selected'));
+          method.classList.add('selected');
+          method.querySelector('input[type="radio"]').checked = true;
+        });
+      });
+
+      // ── Render order summary sidebar ──
+      const summaryItems = document.querySelector('.checkout-summary__items');
+      if (summaryItems) {
+        const items = Cart.getItems();
+        if (items.length === 0) {
+          summaryItems.innerHTML = `
+            <div style="text-align:center; padding:var(--space-xl) 0; color:var(--color-text-muted);">
+              <p style="font-size:var(--text-sm);">Tu carrito está vacío</p>
+              <a href="catalogo.html" class="btn btn--outline btn--sm" style="margin-top:var(--space-md);">Ver Catálogo</a>
+            </div>`;
+        } else {
+          summaryItems.innerHTML = items.map(item => {
+            const product = getProductById(item.id);
+            if (!product) return '';
+            return `
+              <div class="checkout-summary__item">
+                <div class="checkout-summary__item-image">
+                  <img src="${product.image}" alt="${product.name}" onerror="this.style.display='none'">
+                </div>
+                <div>
+                  <p class="checkout-summary__item-name">${product.name}</p>
+                  <p class="checkout-summary__item-variant">${product.subtitle} × ${item.quantity}</p>
+                </div>
+                <span class="checkout-summary__item-price">${formatPrice(product.price * item.quantity)}</span>
+              </div>`;
+          }).join('');
+        }
+      }
+
+      // Update totals
+      const subtotalEl = document.querySelector('.checkout-summary__subtotal-price');
+      const totalEl = document.querySelector('.checkout-summary__total-price');
+      const subtotal = Cart.getSubtotal();
+      if (subtotalEl) subtotalEl.textContent = formatPrice(subtotal);
+      if (totalEl) totalEl.textContent = formatPrice(subtotal);
+    });
+  </script>
+
+</body>
+</html>
+
+
