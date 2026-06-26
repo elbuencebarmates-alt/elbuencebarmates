@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8">
@@ -33,7 +33,29 @@
       <a href="index.html" class="nav__logo">El Buen <span>Cebar</span></a>
       <ul class="nav__links">
         <li><a href="index.html" class="nav__link">Inicio</a></li>
-        <li><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+        <li class="nav__link-wrapper">
+          <a href="catalogo.html" class="nav__link">Catálogo</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-col">
+              <h4 class="nav__dropdown-title">Por Material</h4>
+              <ul class="nav__dropdown-list">
+                <li><a href="catalogo.html?material=calabaza" class="nav__dropdown-link">Calabaza</a></li>
+                <li><a href="catalogo.html?material=acero" class="nav__dropdown-link">Acero Inoxidable</a></li>
+                <li><a href="catalogo.html?material=madera" class="nav__dropdown-link">Madera noble</a></li>
+                <li><a href="catalogo.html?material=cuero" class="nav__dropdown-link">Cuero legítimo</a></li>
+              </ul>
+            </div>
+            <div class="nav__dropdown-col">
+              <h4 class="nav__dropdown-title">Por Modelo</h4>
+              <ul class="nav__dropdown-list">
+                <li><a href="catalogo.html?tipo=imperial" class="nav__dropdown-link">Imperial</a></li>
+                <li><a href="catalogo.html?tipo=torpedo" class="nav__dropdown-link">Torpedo</a></li>
+                <li><a href="catalogo.html?tipo=camionero" class="nav__dropdown-link">Camionero</a></li>
+                <li><a href="catalogo.html" class="nav__dropdown-link">Ver todo</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
         <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
         <li><a href="contacto.html" class="nav__link active">Contacto</a></li>
       </ul>
@@ -80,24 +102,13 @@
             <p class="contact-info__text">Podés contactarnos por cualquiera de estos medios. Te respondemos lo antes posible.</p>
 
             <div class="contact-info__items">
-              <a href="https://wa.me/5491100000000" target="_blank" class="contact-info__item">
-                <div class="contact-info__icon">
-                  <svg viewBox="0 0 24 24" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/></svg>
-                </div>
-                <div class="contact-info__detail">
-                  <strong>WhatsApp</strong>
-                  <span>+54 9 11 0000-0000</span>
-                  <span class="contact-info__cta">Escribinos →</span>
-                </div>
-              </a>
-
-              <a href="mailto:hola@elbuencebar.com" class="contact-info__item">
+              <a href="mailto:elbuencebarmates@gmail.com" class="contact-info__item">
                 <div class="contact-info__icon">
                   <svg viewBox="0 0 24 24" width="28" height="28"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="contact-info__detail">
                   <strong>Email</strong>
-                  <span>hola@elbuencebar.com</span>
+                  <span>elbuencebarmates@gmail.com</span>
                   <span class="contact-info__cta">Envianos un mail →</span>
                 </div>
               </a>
@@ -191,7 +202,7 @@
               <svg class="faq__arrow" viewBox="0 0 24 24" width="20" height="20"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
             <div class="faq__answer">
-              <p>Realizamos envíos a todo el país. El envío es <strong>gratis</strong> en compras mayores a $25.000. Los tiempos de entrega son de 3 a 5 días hábiles para CABA y GBA, y de 5 a 10 días hábiles para el interior del país. Todos los pedidos se despachan dentro de las 48 horas hábiles de confirmado el pago.</p>
+              <p>Realizamos envíos a todo el país. El envío es <strong>gratis</strong> en tu primera compra y en pedidos superando los $100.000. Los tiempos de entrega son de 3 a 5 días hábiles para CABA y GBA, y de 5 a 10 días hábiles para el interior del país.</p>
             </div>
           </div>
 
@@ -201,7 +212,7 @@
               <svg class="faq__arrow" viewBox="0 0 24 24" width="20" height="20"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
             <div class="faq__answer">
-              <p>Sí, tenés 30 días desde la recepción del producto para solicitar un cambio o devolución, siempre que el mate esté en su estado original, sin uso y con el packaging intacto. En caso de productos con defectos de fabricación, el cambio o devolución no tiene costo. Contactanos por WhatsApp o email para gestionar tu solicitud.</p>
+              <p>Sí, tenés 30 días desde la recepción del producto para solicitar un cambio o devolución, siempre que el mate esté en su estado original, sin uso y con el packaging intacto. Contactanos por email o Instagram para gestionar tu solicitud.</p>
             </div>
           </div>
 
@@ -221,7 +232,7 @@
               <svg class="faq__arrow" viewBox="0 0 24 24" width="20" height="20"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </button>
             <div class="faq__answer">
-              <p>Aceptamos todos los medios de pago a través de Mercado Pago: tarjetas de crédito (Visa, Mastercard, American Express), tarjetas de débito, transferencia bancaria, dinero en cuenta de Mercado Pago y efectivo en puntos de pago (Rapipago, Pago Fácil). También podés pagar en hasta 12 cuotas sin interés con tarjetas seleccionadas.</p>
+              <p>Aceptamos efectivo, transferencia bancaria y Mercado Pago. Al abonar en efectivo, obtenés un <strong>10% de descuento</strong> en el total de tu pedido.</p>
             </div>
           </div>
 
@@ -260,8 +271,7 @@
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Contacto</h4>
-          <a href="mailto:hola@elbuencebar.com" class="footer__link">hola@elbuencebar.com</a>
-          <a href="https://wa.me/5491100000000" class="footer__link">WhatsApp</a>
+          <a href="mailto:elbuencebarmates@gmail.com" class="footer__link">elbuencebarmates@gmail.com</a>
           <a href="https://instagram.com/elbuen.cebar" class="footer__link">@elbuen.cebar</a>
         </div>
       </div>
@@ -302,9 +312,11 @@
     </div>
   </div>
 
-  <!-- WhatsApp Float -->
-  <a href="https://wa.me/5491100000000?text=Hola! Me interesa un mate premium" target="_blank" class="whatsapp-float visible" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <!-- ═══════════════════════════════════════════
+       INSTAGRAM FLOAT
+       ═══════════════════════════════════════════ -->
+  <a href="https://instagram.com/elbuen.cebar" target="_blank" rel="noopener" class="instagram-float visible" aria-label="Seguinos en Instagram">
+    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
   </a>
 
   <!-- JS -->

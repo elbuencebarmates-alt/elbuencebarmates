@@ -152,39 +152,95 @@ const UI = {
   // ── Catalog Filters ──
   initCatalogFilters() {
     const filterBtns = document.querySelectorAll('[data-filter]');
-    const sortSelect = document.querySelector('[data-sort]');
+    const sortSelect = document.querySelector('#sort-select') || document.querySelector('[data-sort]');
     const productGrid = document.querySelector('.catalog__grid');
 
     if (!productGrid) return;
 
+    // Read URL Search Parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const paramCategory = urlParams.get('cat');
+    const paramMaterial = urlParams.get('material');
+    const paramTipo = urlParams.get('tipo');
+
     let currentCategory = 'all';
+    let currentMaterial = null;
+    let currentTipo = null;
     let currentSort = 'featured';
 
+    if (paramCategory) {
+      currentCategory = paramCategory;
+    } else if (paramMaterial) {
+      currentMaterial = paramMaterial;
+    } else if (paramTipo) {
+      currentTipo = paramTipo;
+    }
+
     const renderProducts = () => {
-      let products = currentCategory === 'all'
-        ? [...PRODUCTS]
-        : getProductsByCategory(currentCategory);
+      let products = [...PRODUCTS];
+
+      if (currentMaterial) {
+        products = getProductsByMaterial(currentMaterial);
+      } else if (currentTipo) {
+        products = getProductsByType(currentTipo);
+      } else if (currentCategory !== 'all') {
+        products = getProductsByCategory(currentCategory);
+      }
 
       products = sortProducts(products, currentSort);
 
       productGrid.innerHTML = products.map(product => createProductCard(product)).join('');
 
       // Update count
-      const countEl = document.querySelector('.catalog__count');
+      const countEl = document.querySelector('.catalog-toolbar__count') || document.querySelector('.catalog__count');
       if (countEl) {
         countEl.textContent = `${products.length} producto${products.length !== 1 ? 's' : ''}`;
       }
 
+      // Update active chip state
+      filterBtns.forEach(btn => {
+        if (currentMaterial || currentTipo) {
+          btn.classList.remove('active');
+        } else if (btn.dataset.filter === currentCategory) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      // Update page title / labels based on active filter
+      const labelEl = document.querySelector('.catalog-hero__label');
+      const titleEl = document.querySelector('.catalog-hero__title');
+      if (titleEl && labelEl) {
+        if (currentMaterial) {
+          labelEl.textContent = 'Filtrado por Material';
+          titleEl.textContent = `Mates de ${currentMaterial.charAt(0).toUpperCase() + currentMaterial.slice(1)}`;
+        } else if (currentTipo) {
+          labelEl.textContent = 'Filtrado por Modelo';
+          titleEl.textContent = `Modelo ${currentTipo.charAt(0).toUpperCase() + currentTipo.slice(1)}`;
+        } else if (currentCategory !== 'all') {
+          labelEl.textContent = 'Categoría';
+          titleEl.textContent = currentCategory.charAt(0).toUpperCase() + currentCategory.slice(1);
+        } else {
+          labelEl.textContent = 'El Buen Cebar';
+          titleEl.textContent = 'Nuestra Colección';
+        }
+      }
+
       // Re-init animations for new elements
-      Animations.initScrollReveal();
+      if (typeof Animations !== 'undefined' && Animations.initScrollReveal) {
+        Animations.initScrollReveal();
+      }
     };
 
-    // Filter buttons
+    // Filter buttons (chips)
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         currentCategory = btn.dataset.filter;
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        currentMaterial = null;
+        currentTipo = null;
+        // Clean URL parameters cleanly without reloading
+        window.history.pushState({}, '', window.location.pathname + (currentCategory !== 'all' ? `?cat=${currentCategory}` : ''));
         renderProducts();
       });
     });
@@ -196,6 +252,8 @@ const UI = {
         renderProducts();
       });
     }
+
+    renderProducts(); // Initial render
   },
 
   // ── Search Modal ──

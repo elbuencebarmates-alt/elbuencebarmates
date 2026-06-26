@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es-AR">
 <head>
   <meta charset="UTF-8">
@@ -41,7 +41,29 @@
       <a href="index.html" class="nav__logo">El Buen <span>Cebar</span></a>
       <ul class="nav__links">
         <li><a href="index.html" class="nav__link">Inicio</a></li>
-        <li><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+        <li class="nav__link-wrapper">
+          <a href="catalogo.html" class="nav__link">Catálogo</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-col">
+              <h4 class="nav__dropdown-title">Por Material</h4>
+              <ul class="nav__dropdown-list">
+                <li><a href="catalogo.html?material=calabaza" class="nav__dropdown-link">Calabaza</a></li>
+                <li><a href="catalogo.html?material=acero" class="nav__dropdown-link">Acero Inoxidable</a></li>
+                <li><a href="catalogo.html?material=madera" class="nav__dropdown-link">Madera noble</a></li>
+                <li><a href="catalogo.html?material=cuero" class="nav__dropdown-link">Cuero legítimo</a></li>
+              </ul>
+            </div>
+            <div class="nav__dropdown-col">
+              <h4 class="nav__dropdown-title">Por Modelo</h4>
+              <ul class="nav__dropdown-list">
+                <li><a href="catalogo.html?tipo=imperial" class="nav__dropdown-link">Imperial</a></li>
+                <li><a href="catalogo.html?tipo=torpedo" class="nav__dropdown-link">Torpedo</a></li>
+                <li><a href="catalogo.html?tipo=camionero" class="nav__dropdown-link">Camionero</a></li>
+                <li><a href="catalogo.html" class="nav__dropdown-link">Ver todo</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
         <li><a href="nosotros.html" class="nav__link">Nosotros</a></li>
         <li><a href="contacto.html" class="nav__link">Contacto</a></li>
       </ul>
@@ -50,10 +72,10 @@
           <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="1.5"><path d="m15 18-6-6 6-6"/></svg>
           Volver al carrito
         </a>
-        <button class="nav__action-btn" data-search-toggle>
+        <button class="nav__action-btn" data-search-toggle aria-label="Buscar">
           <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
-        <button class="nav__action-btn" data-cart-toggle>
+        <button class="nav__action-btn" data-cart-toggle aria-label="Carrito">
           <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           <span class="nav__cart-count" style="display:none">0</span>
         </button>
@@ -247,16 +269,7 @@
                 <span class="payment-method__icon">💙</span>
                 <div>
                   <p class="payment-method__name">Mercado Pago</p>
-                  <p class="payment-method__description">Tarjeta, débito, efectivo o cuotas sin interés</p>
-                </div>
-              </label>
-
-              <label class="payment-method">
-                <input type="radio" name="payment" value="card">
-                <span class="payment-method__icon">💳</span>
-                <div>
-                  <p class="payment-method__name">Tarjeta de Crédito / Débito</p>
-                  <p class="payment-method__description">Visa, Mastercard, American Express</p>
+                  <p class="payment-method__description">Transferencia, dinero en cuenta o tarjetas</p>
                 </div>
               </label>
 
@@ -265,7 +278,16 @@
                 <span class="payment-method__icon">🏦</span>
                 <div>
                   <p class="payment-method__name">Transferencia Bancaria</p>
-                  <p class="payment-method__description">CBU / Alias — 10% de descuento</p>
+                  <p class="payment-method__description">Transferencia directa por CBU / Alias</p>
+                </div>
+              </label>
+
+              <label class="payment-method">
+                <input type="radio" name="payment" value="cash">
+                <span class="payment-method__icon">💵</span>
+                <div>
+                  <p class="payment-method__name">Efectivo</p>
+                  <p class="payment-method__description">10% de descuento abonando en efectivo</p>
                 </div>
               </label>
 
@@ -334,7 +356,7 @@
               </div>
               <div style="display:flex; align-items:center; gap:var(--space-xs); font-size:var(--text-xs); color:var(--color-text-muted);">
                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--color-success)" fill="none" stroke-width="1.5"><path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11"/><path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2"/><circle cx="7" cy="18" r="2"/><path d="M15 18H9"/><circle cx="17" cy="18" r="2"/></svg>
-                Envío gratis en compras +$20.000
+                Envío gratis en compras +$100.000
               </div>
               <div style="display:flex; align-items:center; gap:var(--space-xs); font-size:var(--text-xs); color:var(--color-text-muted);">
                 <svg viewBox="0 0 24 24" width="14" height="14" stroke="var(--color-success)" fill="none" stroke-width="1.5"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0"/><path d="M12 8v4l2 2"/></svg>
@@ -360,17 +382,18 @@
           <a href="index.html" class="nav__logo" style="font-size:1.5rem">El Buen <span>Cebar</span></a>
           <p class="footer__brand-description">Mates premium argentinos. Tradición artesanal con diseño moderno para quienes disfrutan el ritual del mate con estilo.</p>
           <div class="footer__social">
-            <a href="https://instagram.com/elbuen.cebar" target="_blank" class="footer__social-link" aria-label="Instagram">
-              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg>
+            <a href="https://instagram.com/elbuen.cebar" target="_blank" rel="noopener" class="footer__social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
             </a>
           </div>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Tienda</h4>
-          <a href="catalogo.html" class="footer__link">Catálogo</a>
+          <a href="catalogo.html" class="footer__link">Catálogo Completo</a>
           <a href="catalogo.html?cat=algarrobo" class="footer__link">Imperiales de Algarrobo</a>
-          <a href="catalogo.html?cat=pampa" class="footer__link">Mates Pampa</a>
+          <a href="catalogo.html?cat=pampa" class="footer__link">Mates Pampa Térmicos</a>
           <a href="catalogo.html?cat=cuero" class="footer__link">Imperiales de Cuero</a>
+          <a href="catalogo.html?cat=pvc" class="footer__link">Imperiales de PVC</a>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Info</h4>
@@ -378,16 +401,16 @@
           <a href="contacto.html" class="footer__link">Contacto</a>
           <a href="#" class="footer__link">Envíos</a>
           <a href="#" class="footer__link">Cambios y Devoluciones</a>
+          <a href="#" class="footer__link">Preguntas Frecuentes</a>
         </div>
         <div class="footer__col">
           <h4 class="footer__col-title">Contacto</h4>
-          <a href="mailto:hola@elbuencebar.com" class="footer__link">hola@elbuencebar.com</a>
-          <a href="https://wa.me/5491100000000" class="footer__link">WhatsApp</a>
-          <a href="https://instagram.com/elbuen.cebar" class="footer__link">@elbuen.cebar</a>
+          <a href="mailto:elbuencebarmates@gmail.com" class="footer__link">elbuencebarmates@gmail.com</a>
+          <a href="https://instagram.com/elbuen.cebar" class="footer__link" target="_blank" rel="noopener">@elbuen.cebar</a>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2026 El Buen Cebar. Todos los derechos reservados.</p>
+        <p>&copy; 2026 El Buen Cebar. Todos los derechos reservados.</p>
         <div class="footer__payment-icons">
           <span class="footer__payment-icon">VISA</span>
           <span class="footer__payment-icon">MC</span>
@@ -431,10 +454,10 @@
 
 
   <!-- ═══════════════════════════════════════════
-       WHATSAPP FLOAT
+       INSTAGRAM FLOAT
        ═══════════════════════════════════════════ -->
-  <a href="https://wa.me/5491100000000?text=Hola! Me interesa un mate premium" target="_blank" class="whatsapp-float visible" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a href="https://instagram.com/elbuen.cebar" target="_blank" rel="noopener" class="instagram-float visible" aria-label="Seguinos en Instagram">
+    <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
   </a>
 
 
@@ -536,7 +559,89 @@
       const totalEl = document.querySelector('.checkout-summary__total-price');
       const subtotal = Cart.getSubtotal();
       if (subtotalEl) subtotalEl.textContent = formatPrice(subtotal);
-      if (totalEl) totalEl.textContent = formatPrice(subtotal);
+
+      // If subtotal >= 100000, standard shipping is free
+      if (subtotal >= 100000) {
+        const standardShippingPrice = document.querySelector('.shipping-option:nth-of-type(1) .shipping-option__price');
+        if (standardShippingPrice) {
+          standardShippingPrice.textContent = 'GRATIS';
+          standardShippingPrice.style.color = 'var(--color-success)';
+          standardShippingPrice.style.fontWeight = 'var(--weight-bold)';
+        }
+      }
+
+      // Let's create a function to update totals dynamically
+      function updateTotals() {
+        const selectedPayment = document.querySelector('input[name="payment"]:checked')?.value;
+        const selectedShipping = document.querySelector('input[name="shipping"]:checked')?.value;
+
+        let shippingCost = 0;
+        if (subtotal < 100000) {
+          if (selectedShipping === 'standard') shippingCost = 2500;
+          if (selectedShipping === 'express') shippingCost = 4500;
+        }
+
+        const shippingEl = document.querySelector('.checkout-summary__shipping-price');
+        if (shippingEl) {
+          if (shippingCost === 0) {
+            shippingEl.textContent = (selectedShipping === 'pickup' || subtotal >= 100000) ? 'GRATIS' : 'Calculado en paso 2';
+            shippingEl.style.color = (selectedShipping === 'pickup' || subtotal >= 100000) ? 'var(--color-success)' : 'var(--color-text-muted)';
+          } else {
+            shippingEl.textContent = formatPrice(shippingCost);
+            shippingEl.style.color = 'var(--color-text)';
+          }
+        }
+
+        let discount = 0;
+        if (selectedPayment === 'cash') {
+          discount = subtotal * 0.10;
+        }
+
+        let discountRow = document.querySelector('.checkout-summary__discount-row');
+        if (discount > 0) {
+          if (!discountRow) {
+            discountRow = document.createElement('div');
+            discountRow.className = 'cart-summary__row checkout-summary__discount-row';
+            discountRow.style.color = 'var(--color-success)';
+            discountRow.style.fontWeight = 'var(--weight-bold)';
+            discountRow.innerHTML = `
+              <span>Descuento Efectivo (10%)</span>
+              <span class="checkout-summary__discount-price">-$ 0</span>
+            `;
+            const totalRow = document.querySelector('.cart-summary__row--total');
+            totalRow.parentNode.insertBefore(discountRow, totalRow);
+          }
+          document.querySelector('.checkout-summary__discount-price').textContent = `-${formatPrice(discount)}`;
+        } else if (discountRow) {
+          discountRow.remove();
+        }
+
+        const finalTotal = subtotal + shippingCost - discount;
+        if (totalEl) totalEl.textContent = formatPrice(finalTotal);
+      }
+
+      // Add listeners to shipping changes
+      document.querySelectorAll('input[name="shipping"]').forEach(input => {
+        input.addEventListener('change', updateTotals);
+      });
+      document.querySelectorAll('.shipping-option').forEach(option => {
+        option.addEventListener('click', () => {
+          setTimeout(updateTotals, 10);
+        });
+      });
+
+      // Add listeners to payment changes
+      document.querySelectorAll('input[name="payment"]').forEach(input => {
+        input.addEventListener('change', updateTotals);
+      });
+      document.querySelectorAll('.payment-method').forEach(method => {
+        method.addEventListener('click', () => {
+          setTimeout(updateTotals, 10);
+        });
+      });
+
+      // Initial call
+      updateTotals();
     });
   </script>
 

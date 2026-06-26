@@ -196,6 +196,78 @@ const PRODUCTS = [
     reviews: 38,
     featured: false,
     onSale: false
+  },
+  {
+    id: "mate-camionero-algarrobo",
+    name: "Mate Camionero Algarrobo",
+    subtitle: "Madera noble forrada en cuero",
+    description: "Mate camionero de algarrobo macizo, forrado en cuero de exportación con costuras reforzadas a mano. Virola de acero inoxidable.",
+    price: 32000,
+    originalPrice: 38000,
+    category: "Mates",
+    categorySlug: "mates",
+    image: "assets/images/products/camionero-algarrobo.jpg",
+    materials: ["Madera", "Cuero", "Alpaca"],
+    features: ["Madera noble aromática", "Costura reforzada", "Excelente agarre"],
+    care: "Curar con yerba húmeda por 24hs. No dejar con agua.",
+    rating: 4.9,
+    reviews: 17,
+    featured: false,
+    onSale: true
+  },
+  {
+    id: "mate-camionero-premium",
+    name: "Mate Camionero Premium",
+    subtitle: "Calabaza forrada en cuero",
+    description: "El clásico mate camionero uruguayo. Calabaza seleccionada de paredes gruesas, forrado en cuero vacuno grueso con virola cincelada.",
+    price: 45000,
+    originalPrice: null,
+    category: "Mates",
+    categorySlug: "mates",
+    image: "assets/images/products/camionero-premium.jpg",
+    materials: ["Calabaza", "Cuero", "Alpaca"],
+    features: ["Calabaza seleccionada", "Cuero vacuno genuino", "Virola cincelada"],
+    care: "Curar bien antes de usar para evitar hongos.",
+    rating: 4.8,
+    reviews: 21,
+    featured: true,
+    onSale: false
+  },
+  {
+    id: "mate-camionero-acero",
+    name: "Mate Camionero Térmico",
+    subtitle: "Acero inoxidable y cuero",
+    description: "Mate camionero moderno con interior de acero inoxidable térmico de doble pared, forrado en cuero vacuno negro con virola de alpaca.",
+    price: 39000,
+    originalPrice: null,
+    category: "Mates",
+    categorySlug: "mates",
+    image: "assets/images/products/camionero-acero.jpg",
+    materials: ["Acero Inoxidable", "Cuero"],
+    features: ["Interior de acero térmico", "Fácil lavado", "No necesita curado"],
+    care: "Lavar interior con agua tibia.",
+    rating: 4.7,
+    reviews: 9,
+    featured: false,
+    onSale: false
+  },
+  {
+    id: "mate-tradicional-calabaza",
+    name: "Mate Tradicional Calabaza",
+    subtitle: "Calabaza natural y soporte de cuero",
+    description: "Mate tradicional elaborado a partir de calabaza natural pulida, con soporte o pie de cuero vacuno para una perfecta estabilidad.",
+    price: 24000,
+    originalPrice: null,
+    category: "Mates",
+    categorySlug: "mates",
+    image: "assets/images/products/tradicional-calabaza.jpg",
+    materials: ["Calabaza", "Cuero"],
+    features: ["Calabaza 100% natural", "Pie de cuero estable", "Sabor clásico"],
+    care: "Curar antes de usar. Secar siempre boca arriba.",
+    rating: 4.6,
+    reviews: 13,
+    featured: false,
+    onSale: false
   }
 ];
 
@@ -203,6 +275,18 @@ const PRODUCTS = [
 const getProductsByCategory = (slug) => PRODUCTS.filter(p => p.categorySlug === slug);
 const getProductById = (id) => PRODUCTS.find(p => p.id === id);
 const getFeaturedProducts = () => PRODUCTS.filter(p => p.featured);
+
+const getProductsByMaterial = (material) => PRODUCTS.filter(p => 
+  p.materials.some(m => m.toLowerCase().includes(material.toLowerCase()))
+);
+
+const getProductsByType = (type) => PRODUCTS.filter(p => {
+  const t = type.toLowerCase();
+  return p.name.toLowerCase().includes(t) || 
+         p.subtitle.toLowerCase().includes(t) || 
+         (p.id && p.id.includes(t));
+});
+
 const sortProducts = (products, type) => {
   switch (type) {
     case 'price-asc': return [...products].sort((a, b) => a.price - b.price);
